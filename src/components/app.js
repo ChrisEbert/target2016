@@ -1,5 +1,6 @@
 import {EventAggregator} from 'aurelia-event-aggregator';
 import {inject} from 'aurelia-framework';
+import {save} from '../services/tt_file';
 
 @inject(EventAggregator)
 export class App {
@@ -62,6 +63,10 @@ export class App {
     const browserWindow = remote.getCurrentWindow();
 
     browserWindow.setTitle(`${title} - ${config.name}`);
+  }
+
+  save() {
+    save();
   }
 
   toggleSidebar() {
