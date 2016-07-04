@@ -1,0 +1,39 @@
+.nav {
+  margin: 20px;
+
+  li {
+    padding: 20px 0;
+    list-style: none;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+
+    &:before {
+      display: inline-block;
+      height: 38px;
+      width: 38px;
+      margin: 0 15px 0 0;
+      vertical-align: middle;
+      border-radius: 100%;
+      border: 1px solid rgba(255,255,255,.3);
+      content: "";
+      transition: border-color .2s;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &:before {
+        border-color: #fff;
+      }
+    }
+  }
+}

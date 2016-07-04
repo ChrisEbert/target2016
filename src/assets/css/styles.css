@@ -1,0 +1,67 @@
+:root {
+  --color-1: #6887ff;
+  --brand-ground: #3697ca;
+  --border-color: #e3e6ef;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 300;
+  src: url('../fonts/Raleway/light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 500;
+  src: url('../fonts/Raleway/medium.ttf') format('ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 14px;
+  background: #fafafa;
+  color: #000;
+}
+
+[class*="page-"] {
+  display: flex;
+  height: 100%;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.page-head {
+  height: 75px;
+  background: #fff;
+  border-bottom: 1px solid #d3d6df;
+}
+
+
+
+@import "elements/tables.css";
+@import "./elements/headlines.css";
+@import "./elements/loader.css";
+@import "./elements/buttons.css";
+
+@import "./sections/sidebar.css";
+@import "./sections/splash.css";

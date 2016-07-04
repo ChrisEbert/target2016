@@ -1,0 +1,10 @@
+.splash {
+  height: 100%;
+  background: var(--brand-ground);
+
+  .brand {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #fff;
+  }
+}

@@ -1,0 +1,60 @@
+<template>
+  <require from="./style.css"></require>
+  <require from="../_elements/autocompleter"></require>
+  <require from="../_converter/club-name"></require>
+
+  <div class="headline">
+    Teilnehmer
+  </div>
+
+  <table class="participants">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Verein</th>
+        <th>Klasse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="participant of participants">
+        <td>${$index + 1}</td>
+        <td>${participant.doc.firstname}</td>
+        <td>${participant.doc.lastname}</td>
+        <td>${participant.doc.club|clubName}</td>
+        <td>${participant.doc.class}</td>
+      </tr>
+      <tr>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <form role="form" submit.trigger="submitRoutine()" validate.bind="formInput.validation">
+    <div class="form-group">
+      <label class="control-label" for="firstname">Vorname</label>
+      <input type="text" class="form-control" id="firstname" value.bind="formInput.firstname" validate="firstname" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="lastname">Nachname</label>
+      <input type="text" class="form-control" id="lastname" value.bind="formInput.lastname" validate="lastname" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="club">Verein</label>
+      <input type="text" class="form-control" id="club" value.bind="formInput.club" validate="club" />
+      <autocompleter field="club" result.bind="clubs"></autocompleter>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="type">Klasse</label>
+      <select id="type" value.bind="formInput.class" validate="class">
+        <option repeat.for="class of classes" value.bind="class.id">${class.name}</option>
+      </select>
+    </div>
+
+    <button type="submit" >Speichern</button>
+  </form>
+</template>

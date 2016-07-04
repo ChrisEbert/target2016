@@ -1,0 +1,11 @@
+.participants td:first-child {
+  font-size: 12px;
+  font-weight: 500;
+  color: #abacae;
+  text-align: center;
+}
+
+.participants th:first-child,
+.participants td:first-child {
+  width: 5%;
+}

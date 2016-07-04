@@ -1,0 +1,59 @@
+@import "../components/nav.css";
+
+.app-aside {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  transition: width .4s;
+
+  &.open {
+    width: 80px;
+    overflow: hidden;
+  }
+
+  .nav a,
+  .nav-toggle {
+    white-space: nowrap;
+    transition: color .2s;
+
+    .open& {
+      color: transparent;
+    }
+  }
+}
+
+.nav-toggle {
+  @extend .nav a;
+  display: block;
+  width: 100%;
+  line-height: 75px;
+  padding: 0 0 0 20px;
+  font-size: inherit;
+  font-family: inherit;
+  background: #23589e;
+  border: none;
+  outline: none;
+  text-align: left;
+
+  &:before {
+    @extend .nav a:before;
+  }
+
+  &:hover {
+    @extend .nav a:hover;
+
+    &:before {
+      @extend .nav a:hover:before;
+    }
+  }
+}
+
+.nav-bar {
+  flex-grow: 1;
+  background: linear-gradient(#3ba6de, #265ea9);
+}
+
+.brand {
+  height: 75px;
+  background: var(--brand-ground);
+}

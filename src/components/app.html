@@ -1,0 +1,20 @@
+<template>
+  <require from="./_elements/nav-bar.html"></require>
+
+  <div class="page-${router.currentInstruction.config.name}">
+    <aside id="sidebar" class="app-aside">
+      <div class="brand"></div>
+      <nav-bar router.bind="router" class="nav-bar"></nav-bar>
+      <button class="nav-toggle" click.trigger="toggleSidebar()">
+        Menü einklappen
+      </button>
+    </aside>
+
+    <section class="app-main">
+      <header class="page-head">
+        <button click.trigger="router.navigateBack()">Seite zurück</button>
+      </header>
+      <router-view></router-view>
+    </section>
+  </div>
+</template>

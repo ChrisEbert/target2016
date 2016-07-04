@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+
+  th,
+  td {
+    padding: 15px;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  th {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  tr {
+    &:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+}
